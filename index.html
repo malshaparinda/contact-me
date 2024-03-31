@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Malsha Parinda</title>
+    <!--Styles-->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      h1 {
+        text-align: center;
+      }
+      p {
+        margin: 10px 0;
+      }
+      .profile-img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 20px;
+        overflow: hidden;
+      }
+      profile-img img {
+        width: 100%;
+        height: auto;
+      }
+      .description {
+        font-weight: bold;
+        font-size: 20px;
+        padding-bottom: 10px;
+      }
+      .save-contact-btn {
+        background-color: #4432eb;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      .save-contact-btn:hover {
+        background-color: #a79bd4;
+      }
+      .social-icons {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .social-icons a {
+        display: inline-block;
+        margin: 0 10px;
+        color: #666;
+      }
+      .social-icons a:hover {
+        color: #333;
+      }
+
+      .social-icons img {
+        width: 40px; /* Adjust the size as needed */
+        height: auto;
+      }
+    </style>
+    <!--Styles-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="profile-img">
+        <img src="profile.jpg" alt="Profile Picture" />
+      </div>
+      <h1>Malsha Parinda</h1>
+      <div class="description">
+        <p>Designer | Developer | Editor</p>
+      </div>
+      <p><strong>Name</strong> Malsha Parinda</p>
+      <p><strong>Phone:</strong> 0776111142 | 0788779433</p>
+      <p><strong>Email:</strong> <a href="malsha.parinda2000@gmail.com">malsha.parinda2000@gmail.com</a></p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/malsha007/" target="_blank"
+          ><img src="facebook.png" alt="Facebook"
+        /></a>
+        <a href="https://www.instagram.com/malsha_x/" target="_blank"
+          ><img src="instagram.png" alt="Instagram"
+        /></a>
+        <a href="https://www.behance.net/malshaparinda" target="_blank"
+          ><img src="behance.png" alt="Behance"
+        /></a>
+      </div>
+      <button class="save-contact-btn" onclick="saveContact()">
+        Save Contact
+      </button>
+    </div>
+    <!--Javascript-->
+    <script>
+      function saveContact() {
+        var contact = {
+          name: "Malsha Parinda",
+          phone: "0776111142",
+        };
+        var contactStr = JSON.stringify(contact);
+        var dataUri =
+          "data:text/json;charset=utf-8," + encodeURIComponent(contactStr);
+        var link = document.createElement("a");
+        link.setAttribute("href", dataUri);
+        link.setAttribute("download", "contact.json");
+        link.click();
+      }
+    </script>
+  </body>
+</html>
